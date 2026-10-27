@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "id": "csv-cleaner",
+      "name": "CSV Cleanroom",
+      "status": "initial-implementation",
+      "user": "Operations worker",
+      "task": "Clean a user-owned export",
+      "mvp": "Normalize UTF-8 headers, trim cells, deduplicate rows",
+      "acceptance": [
+        "Synthetic example yields two unique records",
+        "Malformed input is rejected without overwriting files"
+      ],
+      "excludes": [
+        "Enrichment",
+        "Cloud connectors",
+        "Lossless numeric typing"
+      ]
+    },
+    {
+      "id": "application-board",
+      "name": "Application Board",
+      "status": "proposal",
+      "user": "Job seeker",
+      "task": "Track applications privately",
+      "mvp": "Local entries with next action, CSV import/export",
+      "acceptance": [
+        "Export and reimport preserve entries",
+        "Keyboard-only entry works"
+      ],
+      "excludes": [
+        "Job scraping",
+        "Auto-applying"
+      ]
+    },
+    {
+      "id": "invoice-draft",
+      "name": "Invoice Draft",
+      "status": "proposal",
+      "user": "Freelancer",
+      "task": "Prepare a simple invoice draft",
+      "mvp": "Local customer-entered line items and printable draft",
+      "acceptance": [
+        "Arithmetic matches a fixed synthetic fixture",
+        "All fields export to JSON"
+      ],
+      "excludes": [
+        "Tax advice",
+        "Payment processing",
+        "Compliance claims"
+      ]
+    },
+    {
+      "id": "scope-letter",
+      "name": "Scope Letter",
+      "status": "proposal",
+      "user": "Independent consultant",
+      "task": "Clarify a small service engagement",
+      "mvp": "Markdown scope, milestones, exclusions, and handover",
+      "acceptance": [
+        "A new user can generate and edit a complete sample"
+      ],
+      "excludes": [
+        "Legal contract advice",
+        "Automatic signatures"
+      ]
+    },
+    {
+      "id": "handover-kit",
+      "name": "Handover Kit",
+      "status": "proposal",
+      "user": "Small nonprofit team",
+      "task": "Document how to run a process",
+      "mvp": "Local templates for steps, access owners, and recovery",
+      "acceptance": [
+        "A volunteer can follow a synthetic process unaided"
+      ],
+      "excludes": [
+        "Secret storage",
+        "Employee surveillance"
+      ]
+    },
+    {
+      "id": "meeting-decisions",
+      "name": "Decision Notes",
+      "status": "proposal",
+      "user": "Community organizer",
+      "task": "Find decisions in structured notes",
+      "mvp": "Manual Markdown decision tags to an index",
+      "acceptance": [
+        "Fixture decisions map to source note headings"
+      ],
+      "excludes": [
+        "Recording",
+        "Transcription",
+        "Private chat ingestion"
+      ]
+    },
+    {
+      "id": "data-dictionary",
+      "name": "Data Dictionary",
+      "status": "proposal",
+      "user": "Data analyst",
+      "task": "Explain a CSV dataset",
+      "mvp": "Generate editable field-name and sample-type documentation",
+      "acceptance": [
+        "Synthetic columns all appear",
+        "Values omitted from public output by default"
+      ],
+      "excludes": [
+        "Sensitive-data detection guarantees",
+        "External uploads"
+      ]
+    },
+    {
+      "id": "checklist-pack",
+      "name": "Checklist Pack",
+      "status": "proposal",
+      "user": "Volunteer coordinator",
+      "task": "Reuse repeatable task lists",
+      "mvp": "Markdown checklist renderer with editable local templates",
+      "acceptance": [
+        "Generated lists preserve all requested steps"
+      ],
+      "excludes": [
+        "Approval engines",
+        "Hosted accounts"
+      ]
+    },
+    {
+      "id": "text-diff",
+      "name": "Plain Diff",
+      "status": "proposal",
+      "user": "Technical writer",
+      "task": "Compare two local text versions",
+      "mvp": "Readable additions/deletions with downloadable plain text",
+      "acceptance": [
+        "Unicode and empty-file fixtures compare correctly"
+      ],
+      "excludes": [
+        "Proprietary document parsing",
+        "AI rewrite claims"
+      ]
+    },
+    {
+      "id": "accessibility-notes",
+      "name": "Accessibility Notes",
+      "status": "proposal",
+      "user": "Website maintainer",
+      "task": "Record manual accessibility checks",
+      "mvp": "Local checklist with evidence and remediation notes",
+      "acceptance": [
+        "Keyboard and form-label observations can be recorded and exported"
+      ],
+      "excludes": [
+        "Compliance certification",
+        "Automated audit guarantees"
+      ]
+    },
+    {
+      "id": "time-box",
+      "name": "Time Box",
+      "status": "proposal",
+      "user": "Independent worker",
+      "task": "Plan focus blocks without surveillance",
+      "mvp": "Offline timer and optional local session notes",
+      "acceptance": [
+        "Timer can be paused and reset",
+        "No tracking leaves the device"
+      ],
+      "excludes": [
+        "Employee scoring",
+        "Screen capture"
+      ]
+    },
+    {
+      "id": "service-catalog",
+      "name": "Service Catalog",
+      "status": "proposal",
+      "user": "Small cooperative",
+      "task": "Describe available paid services clearly",
+      "mvp": "Static Markdown offers with input, output, limits, and handover",
+      "acceptance": [
+        "Each sample offer contains all five required fields"
+      ],
+      "excludes": [
+        "Payments",
+        "Lead scraping",
+        "Revenue promises"
+      ]
+    }
+  ]
+}

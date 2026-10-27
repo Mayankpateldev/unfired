@@ -1,0 +1,13 @@
+# Personal workspaces and generated reports must remain private.
+.unfired/
+output/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+coverage/

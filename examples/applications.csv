@@ -1,0 +1,4 @@
+company,role,url,status,date_applied,next_action,follow_up,notes
+Example Team A,Developer,https://example.invalid/a,applied,2026-10-20,Ask about timeline,2026-10-28,Synthetic example
+Example Team B,Analyst,https://example.invalid/b,interview,2026-10-21,Prepare two stories,2026-10-29,Synthetic example
+Example Team C,Technical writer,https://example.invalid/c,researching,,Review role,,Synthetic example
