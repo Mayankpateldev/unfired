@@ -2,7 +2,7 @@
 
 Working repository name: `unfired`. Suggested description:
 
-> They ended your role. You keep your skills. An open-source layoff recovery kit, learning roadmap, and free-tools movement.
+> Understand how it works. Build it open. A reverse-engineering and open-alternatives handbook with runnable labs, project templates, and worker support.
 
 This checkout may be prepared before GitHub publication. Do not announce a URL until creation succeeds. Repo-name availability within your account and trademark clearance are separate questions; neither is assumed here.
 
@@ -25,11 +25,11 @@ From this project directory:
 
 ```bash
 git init
-git add README.md LICENSE .gitignore assets community docs examples projects templates tools tests scripts .github CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md ROADMAP.md CHANGELOG.md
+git add README.md LICENSE .gitignore assets community docs examples handbook labs projects templates tools tests scripts .github CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md SUPPORT.md GOVERNANCE.md ROADMAP.md CHANGELOG.md
 git diff --cached --stat
 git diff --cached
 git commit -m "Launch Unfired: open-source comeback kit"
-gh repo create unfired --public --source=. --remote=origin --push --description "They ended your role. You keep your skills. Open-source layoff recovery, learning, and free tools."
+gh repo create unfired --public --source=. --remote=origin --push --description "Understand how it works. Build it open. Reverse-engineering handbook, runnable labs, and open alternatives."
 ```
 
 These are first-publication commands. If `origin` or the target repo already exists, inspect it before proceeding; do not delete a remote or force-push to work around a conflict. If `unfired` is unavailable under your account, choose `unfired-kit` and use that in creation and subsequent commands.

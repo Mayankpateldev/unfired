@@ -1,0 +1,29 @@
+{
+  "format": "unfired-board",
+  "version": 1,
+  "cards": [
+    {
+      "id": "card-1",
+      "title": "Read the public spec",
+      "state": "done",
+      "labels": [
+        "research"
+      ]
+    },
+    {
+      "id": "card-2",
+      "title": "Test commas, quotes \"and\" Unicode: Zoë",
+      "state": "doing",
+      "labels": [
+        "compatibility",
+        "docs"
+      ]
+    },
+    {
+      "id": "card-3",
+      "title": "Write a note\non two lines",
+      "state": "todo",
+      "labels": []
+    }
+  ]
+}

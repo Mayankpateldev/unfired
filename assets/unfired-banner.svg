@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
   <title id="title">Unfired</title>
-  <desc id="desc">They ended your role. You keep your skills. Recover. Learn. Build. Share.</desc>
+  <desc id="desc">Understand how it works. Build it open. Make it accessible.</desc>
   <rect width="1280" height="480" rx="28" fill="#101712"/>
   <circle cx="1150" cy="65" r="270" fill="#1d3022"/>
   <path d="M970 320V160h160M970 160l190 190" fill="none" stroke="#96f56a" stroke-width="30" transform="rotate(90 1060 250)"/>
-  <text x="64" y="76" fill="#96f56a" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">THE OPEN-SOURCE COMEBACK KIT</text>
+  <text x="64" y="76" fill="#96f56a" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">THE OPEN REBUILD MOVEMENT</text>
   <text x="58" y="235" fill="#f4f7ee" font-family="Arial,sans-serif" font-weight="900" font-size="142" letter-spacing="-7">UNFIRED.</text>
-  <text x="64" y="310" fill="#f4f7ee" font-family="Arial,sans-serif" font-size="32">They ended your role. You keep your skills.</text>
-  <text x="64" y="411" fill="#96f56a" font-family="Arial,sans-serif" font-size="22">RECOVER. LEARN. BUILD. SHARE.</text>
+  <text x="64" y="310" fill="#f4f7ee" font-family="Arial,sans-serif" font-size="32">Understand how it works. Build it open.</text>
+  <text x="64" y="411" fill="#96f56a" font-family="Arial,sans-serif" font-size="22">OBSERVE. SPECIFY. REBUILD. VERIFY. SHARE.</text>
 </svg>

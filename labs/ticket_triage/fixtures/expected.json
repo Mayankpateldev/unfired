@@ -1,0 +1,34 @@
+{
+  "routes": [
+    {
+      "id": "t-1",
+      "queue": "billing",
+      "priority": "normal",
+      "reason": "billing_topic"
+    },
+    {
+      "id": "t-2",
+      "queue": "human_review",
+      "priority": "high",
+      "reason": "urgent_flag"
+    },
+    {
+      "id": "t-3",
+      "queue": "technical",
+      "priority": "normal",
+      "reason": "technical_topic"
+    },
+    {
+      "id": "t-4",
+      "queue": "general",
+      "priority": "normal",
+      "reason": "fallback"
+    }
+  ],
+  "counts": {
+    "billing": 1,
+    "technical": 1,
+    "general": 1,
+    "human_review": 1
+  }
+}

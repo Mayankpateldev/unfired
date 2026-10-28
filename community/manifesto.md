@@ -1,22 +1,26 @@
 # The Unfired manifesto
 
-**They ended your role. You keep your skills.**
+**Understand how it works. Build it open. Make it accessible.**
 
-We believe the people who build, support, explain, test, and operate technology should be able to shape what comes next.
+People who build, support, explain, test, and operate systems carry knowledge that can power public goods. A job ending does not erase that experience. A subscription ending should not make a person's work disappear.
 
-When work changes, workers need more than advice to “learn the next thing.” They need breathing room, practical support, honest information, and a way to turn experience into opportunity.
+We study useful behavior, write understandable specifications, create original implementations, and publish what we have the right to share. Our goal is practical independence: tools people can run, inspect, modify, and leave with their data.
 
-Our commitments:
+## Our commitments
 
-1. **Stability before hustle.** Benefits, health, family, and income come before a public comeback narrative.
-2. **Skills become public goods.** Build original tools from public information that help real people do useful work.
-3. **Access without a subscription.** Keep a useful local core runnable without an account, paid model, or vendor permission.
-4. **People own their work.** Use open formats, documented exports, and understandable behavior.
-5. **AI with judgment.** Evaluate what it does, disclose costs and limits, and never confuse confident output with verified truth.
-6. **Credit every kind of contributor.** Documentation, testing, design, translation, care, and maintenance matter.
-7. **Honesty over hype.** Name what works, what is proposed, what costs money, and what we cannot promise.
-8. **A movement people can sustain.** Let contributors earn from their skills and services without closing this project's source.
+1. **Useful outcomes before platform clones.** Start with one person and one task that matters.
+2. **Understanding before claims.** Separate observations, hypotheses, and original design choices.
+3. **Original work and accountable sources.** Keep provenance and respect rights, privacy, and permission.
+4. **Verification before hype.** Publish reproducible examples, meaningful failures, and compatibility limits.
+5. **Portability as a feature.** Use open formats, preserve user information, and provide an exit.
+6. **An accessible local core.** Avoid making a paid API or vendor account a condition for the included core tools.
+7. **AI with judgment.** Use assistance where it helps; review outputs and disclose costs and limitations.
+8. **Credit every contributor.** Research, writing, QA, translation, design, and maintenance count alongside code.
+9. **Work people can sustain.** Respect volunteer capacity and let contributors earn from skills and services.
+10. **Stability before a comeback story.** People navigating layoffs deserve practical support without pressure to perform recovery in public.
 
-We do not need permission to help each other. Start with one person, one problem, and one useful contribution.
+Employment status is not a membership requirement. Improving an existing open-source project is a full contribution to this movement. Building everything from scratch is not the goal; giving people useful, understandable choices is.
 
-**Recover. Learn. Build. Share. Repeat.**
+**Observe. Specify. Rebuild. Verify. Share.**
+
+They ended your role. You keep your skills.

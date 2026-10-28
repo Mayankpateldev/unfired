@@ -1,0 +1,559 @@
+[
+  {
+    "id": "multi-item",
+    "request": {
+      "items": [
+        {
+          "sku": "A",
+          "quantity": 2,
+          "unit_cents": 1250
+        },
+        {
+          "sku": "B",
+          "quantity": 1,
+          "unit_cents": 500
+        }
+      ],
+      "discount_bps": 1000,
+      "tax_bps": 500
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 3000,
+      "discount_cents": 300,
+      "taxable_cents": 2700,
+      "tax_cents": 135,
+      "total_cents": 2835,
+      "units": 3
+    }
+  },
+  {
+    "id": "discount-half-cent",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ],
+      "discount_bps": 5000
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 1,
+      "discount_cents": 1,
+      "taxable_cents": 0,
+      "tax_cents": 0,
+      "total_cents": 0,
+      "units": 1
+    }
+  },
+  {
+    "id": "tax-half-cent",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ],
+      "tax_bps": 5000
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 1,
+      "discount_cents": 0,
+      "taxable_cents": 1,
+      "tax_cents": 1,
+      "total_cents": 2,
+      "units": 1
+    }
+  },
+  {
+    "id": "free-item",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 0
+        }
+      ]
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 0,
+      "discount_cents": 0,
+      "taxable_cents": 0,
+      "tax_cents": 0,
+      "total_cents": 0,
+      "units": 1
+    }
+  },
+  {
+    "id": "unicode-sku",
+    "request": {
+      "items": [
+        {
+          "sku": "Tâche",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ],
+      "discount_bps": 10000,
+      "tax_bps": 10000
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 1,
+      "discount_cents": 1,
+      "taxable_cents": 0,
+      "tax_cents": 0,
+      "total_cents": 0,
+      "units": 1
+    }
+  },
+  {
+    "id": "limits",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1000,
+          "unit_cents": 1000000
+        }
+      ],
+      "tax_bps": 10000
+    },
+    "expected_status": 200,
+    "expected_body": {
+      "subtotal_cents": 1000000000,
+      "discount_cents": 0,
+      "taxable_cents": 1000000000,
+      "tax_cents": 1000000000,
+      "total_cents": 2000000000,
+      "units": 1000
+    }
+  },
+  {
+    "id": "empty-items",
+    "request": {
+      "items": []
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "missing-items",
+    "request": {},
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "bool-quantity",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": true,
+          "unit_cents": 1
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "negative-price",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": -1
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "fractional-price",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1.5
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "unknown-field",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ],
+      "secret": 1
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "too-many-items",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        },
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "invalid-rate",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ],
+      "tax_bps": 10001
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "empty-sku",
+    "request": {
+      "items": [
+        {
+          "sku": " ",
+          "quantity": 1,
+          "unit_cents": 1
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "not-object",
+    "request": [],
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "extra-item-field",
+    "request": {
+      "items": [
+        {
+          "sku": "demo",
+          "quantity": 1,
+          "unit_cents": 1,
+          "title": "x"
+        }
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  },
+  {
+    "id": "null-item",
+    "request": {
+      "items": [
+        null
+      ]
+    },
+    "expected_status": 400,
+    "expected_body": {
+      "error": "invalid_request"
+    }
+  }
+]

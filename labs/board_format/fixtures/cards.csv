@@ -1,0 +1,5 @@
+id,title,state,labels
+card-1,Read the public spec,done,"[""research""]"
+card-2,"Test commas, quotes ""and"" Unicode: Zoë",doing,"[""compatibility"", ""docs""]"
+card-3,"Write a note
+on two lines",todo,[]

@@ -1,97 +1,111 @@
 <div align="center">
 
-<img src="assets/unfired-banner.svg" alt="Unfired. They ended your role. You keep your skills." width="100%">
+<img src="assets/unfired-banner.svg" alt="Unfired. Understand how it works. Build it open." width="100%">
 
 # UNFIRED
 
-**They ended your role. You keep your skills.**
+**Understand how it works. Build it open. Make it accessible.**
 
-A free, open-source survival kit for layoffs — and a movement to turn hard-earned skills into tools everyone can use.
+An open-source movement for studying useful systems, rebuilding their behavior independently, and giving people tools they can own.
 
-[Start here](docs/01-first-72-hours.md) · [Learn](docs/04-learning-paths.md) · [Build](projects/README.md) · [Contribute](CONTRIBUTING.md) · [Share](community/launch-kit.md)
+[Start building](handbook/README.md) · [Run the labs](labs/README.md) · [Choose a project](projects/README.md) · [Learn](handbook/curriculum.md) · [Layoff support](docs/01-first-72-hours.md)
 
-![License: MIT](https://img.shields.io/badge/license-MIT-96f56a)
-![Dependencies: zero](https://img.shields.io/badge/Python_dependencies-zero-96f56a)
-![Status: early project](https://img.shields.io/badge/status-early_project-ffba69)
-[![Repository checks](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml/badge.svg)](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml)
+[![Checks](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml/badge.svg)](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml)
+![MIT](https://img.shields.io/badge/license-MIT-96f56a)
+![Dependencies](https://img.shields.io/badge/Python_dependencies-zero-96f56a)
+![Stage](https://img.shields.io/badge/stage-working_labs_%2B_project_incubator-ffba69)
 
 </div>
 
-## Your next move starts here
+## The idea
 
-Losing a job can take away income, routine, and confidence at once. You do not have to solve your whole future today. Start with the next useful step.
+Years of learning do not disappear when a role ends. Use that experience to understand a problem, study observable behavior through permitted sources, and build an original alternative that people can run, inspect, modify, and leave with their data.
 
-| Your situation | Start with | Leave with |
-| --- | --- | --- |
-| “It just happened.” | [First 72 hours](docs/01-first-72-hours.md) | A short checklist for benefits, documents, support, and deadlines |
-| “How much time do I have?” | [Runway and income](docs/02-runway-and-income.md) | A cash-flow scenario and a realistic weekly plan |
-| “I need another job.” | [Job-search playbook](docs/03-job-search.md) | A targeted resume, outreach scripts, and a private tracker |
-| “What should I learn?” | [Learning paths](docs/04-learning-paths.md) | A four-week track with tangible deliverables |
-| “I want to build something free.” | [Build playbook](docs/05-build-free-alternatives.md) | A small, independently implemented product people can use |
-| “I want to help without coding.” | [Contributing](CONTRIBUTING.md) | Documentation, testing, research, design, or translation work |
+**Observe → specify → rebuild → verify → share.**
 
-## The movement
+The scope includes applications, APIs, file formats, business workflows, desktop tools, and public hardware interfaces. The [six tracks](handbook/tracks.md) explain how to start and what evidence each needs. We welcome people in any employment situation. Layoff recovery remains a dedicated track, rather than the whole project.
 
-Workers carry years of experience. That experience can power public goods: free utilities, open formats, portable data, and understandable software. Our answer to feeling disposable is to build things people can keep.
+## Start in five minutes
 
-AI is changing work, and some workers face displacement. Layoffs have many causes; this project does not assume every layoff was caused by AI or promise any skill is “AI-proof.” Use AI where it helps, verify its output, and keep human judgment in charge.
-
-**Recover. Learn. Build. Share. Repeat.**
-
-Read [the manifesto](community/manifesto.md), follow [the flexible 90-day plan](docs/09-90-day-plan.md), or use [the skills-to-tools worksheet](docs/10-skills-to-tools.md) to choose a first project.
-
-We welcome workers whether they want a job, freelance income, a cooperative, a business, or simply time to recover. No one owes the internet a comeback story.
-
-## Run something useful today
-
-Python 3.10+; no packages, account, API key, paid model, or network required.
+Clone once, then run from the repository root. Python 3.10+; no packages, account, paid model, or API key required for the labs.
 
 ```bash
-# Make a private workspace with editable trackers and a weekly plan.
-python3 tools/unfired.py init
+git clone https://github.com/Mayankpateldev/unfired.git
+cd unfired
 
-# Estimate a simple cash runway. Use one currency throughout.
-python3 tools/unfired.py runway --cash 9000 --monthly-costs 2500 --monthly-income 500 --reserve 1000
+# Compare reference/replacement behavior and replay the migration/workflow fixtures.
+python3 -m labs.verify
 
-# Clean a synthetic CSV: normalize headers, trim cells, remove duplicate rows.
-python3 tools/unfired.py csv-clean examples/messy-contacts.csv --out output/clean-contacts.csv
-
-# Summarize your private job-search tracker without publishing company/contact details.
-python3 tools/unfired.py report .unfired/applications.csv --out output/search-summary.md
-
-# Verify tools, data, and local documentation links.
+# Run behavioral, HTTP, round-trip, overwrite, and scaffold tests.
 python3 -m unittest discover -s tests -v
+
+# Validate local document links and the project/lab registries.
 python3 scripts/check_repo.py
 ```
 
-See [tool usage and limitations](tools/README.md). `.unfired/` and `output/` are ignored by Git. Keep personal records there; review staged changes before every public push.
+The fixture replay should report **20/20 checks passed**. It proves agreement on the supplied teaching cases, not universal compatibility with an external product. HTTP tests open loopback ports; restricted environments must allow local loopback binding.
 
-## What is ready, and what is next?
+## Three working rebuild labs
 
-**Ready:** recovery guides, learning tracks, reusable templates, local trackers, a runway calculator, a CSV cleaner, an aggregate tracker report, and community contribution workflows.
+| Lab | Run / try | What it teaches |
+| --- | --- | --- |
+| [API compatibility](labs/quote_api/README.md) | `python3 -m labs.quote_api.server --implementation replacement --port 8765` | HTTP contracts, errors, rounding, and two implementation strategies |
+| [File-format migration](labs/board_format/README.md) | `python3 -m labs.board_format from-csv labs/board_format/fixtures/cards.csv --out output/board.json` | Unicode, quoted fields, schema versions, and data-preserving round trips |
+| [Workflow reconstruction](labs/ticket_triage/README.md) | `python3 -m labs.ticket_triage labs/ticket_triage/fixtures/input.json --out output/triage.json` | Rule precedence, human-review routing, and explicit fallbacks |
 
-**Proposed:** the [project catalog](projects/catalog.json) contains 12 scoped ideas. The CSV cleaner has an initial implementation here; the other entries are proposals, not finished products. There are no claimed users, partners, savings, or adoption numbers.
+All three have written contracts, synthetic inputs, expected outputs, implementations, and tests. They are original educational systems created here, not commercial products we have reverse-engineered. The API server is a loopback teaching service, not a production billing or tax service. File commands refuse existing output paths; use a new path to rerun.
 
-**Free source is not free hosting.** Local tools run without a subscription; managed hosting, storage, domains, support, and optional AI APIs can cost money. See [sustainability](docs/07-community-and-sustainability.md).
+## Turn an idea into a reviewable project
 
-## Build from your skills
+```bash
+python3 tools/new_project.py my-open-tool --category workflow --out output/my-open-tool
+```
 
-Use public documentation, public standards, properly licensed dependencies, and original implementations. Do not contribute employer code, internal designs, private prompts, customer data, credentials, or confidential knowledge. A clean implementation is a contribution rule, not a guarantee that every product is legally clear. See [provenance and independent development](docs/06-independent-development.md).
+This generates ten dossier files: scope, contract, observations, compatibility, provenance, release checklist, fixture/test instructions, license, and ignore rules. It is clearly marked **draft**, with no pretend implementation or passing placeholder tests. Replace `workflow` with `api`, `web`, `file-format`, `desktop`, or `hardware` as appropriate.
 
-## Join in one small step
+Follow [the method](handbook/method.md), choose from [24 scoped catalog entries](projects/README.md), and use the [12-week curriculum](handbook/curriculum.md) to fill skill gaps. The catalog contains **four initial implementations** (the CSV cleaner and three teaching labs) and **20 proposals**. Proposals are not finished software.
 
-- Improve one instruction that confused you.
-- Test the CSV cleaner with synthetic data and report a reproducible issue.
-- Propose one narrowly scoped tool after talking to potential users.
-- Translate the first-72-hours guide and have a second speaker review it.
-- Share the repo with one person who would find it useful.
+## What to read next
 
-Use the [issue templates](.github/ISSUE_TEMPLATE), [contribution guide](CONTRIBUTING.md), [Discussions](https://github.com/Mayankpateldev/unfired/discussions), and [launch kit](community/launch-kit.md). This is an early project with [a public roadmap](ROADMAP.md), not an established support organization. We cannot promise response times.
+| You want to… | Go here | Leave with |
+| --- | --- | --- |
+| Understand how to study a system | [Rebuild method](handbook/method.md) | Observations separated from hypotheses |
+| Pick a domain | [Six tracks](handbook/tracks.md) | One narrow workflow and a first deliverable |
+| Choose tools | [Tools and primary references](handbook/tools.md) | A tool for a specific question |
+| Prove a replacement works | [Compatibility and migration](handbook/compatibility.md) | Golden cases, a matrix, and rollback steps |
+| Use AI without trusting guesses | [AI workflow](handbook/ai-workflow.md) | A reviewed implementation and honest evaluation |
+| Understand open-source tradeoffs | [Licensing guide](handbook/licensing.md) | A deliberate reuse policy and notices |
+| Release something maintainable | [Release guide](handbook/release.md) | Setup, export, costs, support limits, and handover |
+| Contribute to an existing alternative | [Existing projects](handbook/existing-projects.md) | A useful gap before starting a new platform |
+| Recover after a layoff | [First 72 hours](docs/01-first-72-hours.md), [90-day plan](docs/09-90-day-plan.md) | Immediate next steps and a sustainable plan |
 
-## License and publication
+## What makes a rebuild useful
 
-[MIT](LICENSE) covers original code, documentation, templates, and artwork in this repository. Anyone, including companies, may use and modify them commercially while preserving the required notice. MIT does **not** require downstream modifications to stay open. Linked third-party materials keep their own licenses.
+A clear user problem. Public or authorized sources. Original implementation. Reproducible behavior checks. Open export. A practical migration and exit. Honest costs and maintenance limits.
 
-The repository is public at [Mayankpateldev/unfired](https://github.com/Mayankpateldev/unfired). Trademark clearance for the working name has not been established. See [publication instructions](docs/08-publish-and-launch.md) for forks and launch setup. Viral reach is not guaranteed.
+Use your skills and public knowledge; keep employer code, confidential designs, customer records, credentials, and unauthorized captures out. Whether a particular reverse-engineering activity is permitted depends on the source, agreements, rights, and location. [Independent-development guidance](docs/06-independent-development.md) explains the project process; it does not give blanket legal clearance.
 
-Employment, benefits, immigration, tax, and IP rules depend on location and circumstances. Guides point to official sources; they are general information, not individualized professional advice. Source review date: **2026-10-27**.
+## Recovery tools are still here
+
+```bash
+python3 tools/unfired.py init
+python3 tools/unfired.py runway --cash 9000 --monthly-costs 2500 --monthly-income 500 --reserve 1000
+python3 tools/unfired.py csv-clean examples/messy-contacts.csv --out output/clean-contacts.csv
+python3 tools/unfired.py report .unfired/applications.csv --out output/search-summary.md
+```
+
+See [tool documentation](tools/README.md), [job-search materials](docs/03-job-search.md), and [four-week learning paths](docs/04-learning-paths.md). `.unfired/` and `output/` are ignored by Git here but are not encrypted. Do not commit personal records. Cash scenarios are simplified planning aids, not personalized financial guidance.
+
+## Build the movement
+
+Read [the manifesto](community/manifesto.md). Start with one lab, one observation, one bug fix, one translation, or one useful project proposal. [Contributing](CONTRIBUTING.md) explains how research, design, QA, writing, and code fit together. [Support](SUPPORT.md), [governance](GOVERNANCE.md), and [the roadmap](ROADMAP.md) explain what to expect.
+
+[Find issues](https://github.com/Mayankpateldev/unfired/issues) · [Join Discussions](https://github.com/Mayankpateldev/unfired/discussions) · [Use the launch kit](community/launch-kit.md) · [See the completeness audit](docs/11-completeness-audit.md)
+
+Useful releases and respectful sharing can attract contributors. No viral reach, users, partnerships, job outcomes, or customer savings are claimed or guaranteed. Free local source does not mean unlimited free hosting.
+
+## License
+
+[MIT](LICENSE) covers this repository's original code, guides, fixtures, templates, and artwork. Commercial reuse is permitted with the required notice. MIT does **not** require downstream modifications to remain open. External materials and linked projects retain their own terms. See [licensing choices](handbook/licensing.md).
+
+Source-review notes: [docs/sources.md](docs/sources.md). Working project name: Unfired; trademark clearance is not established. Version 0.2 broadens the original recovery kit into a rebuild handbook and lab collection; it does not claim to deliver every possible replacement product.

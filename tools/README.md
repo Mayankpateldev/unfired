@@ -2,6 +2,28 @@
 
 Run from the repository root with Python 3.10+. Only the Python standard library is used. No installation, network requests, telemetry, or AI service is involved. Input files are loaded into memory; use small files, not huge datasets.
 
+For the runnable local API, migration, and workflow examples, see [the three labs](../labs/README.md). The API lab opens a loopback HTTP listener; the file utilities described here make no network calls.
+
+## Scaffold an original rebuild project
+
+```bash
+python3 tools/new_project.py demo-tool --category api --out output/demo-tool
+```
+
+Creates ten draft dossier files in a new directory, including contract, observation, compatibility, provenance, release, fixture/test instructions, MIT license, README, and ignore rules. Categories: api, web, file-format, workflow, desktop, hardware. Names must be lowercase hyphen-separated slugs, at most 64 characters. Existing directories are refused. No implementation or passing placeholder tests are generated; fill the dossier and implement the task yourself.
+
+## Compare independent expected and actual JSON
+
+After converting the board fixture with the command in [the format lab](../labs/board_format/README.md):
+
+```bash
+python3 tools/compare_json.py labs/board_format/fixtures/expected.json output/board.json --out output/comparison.json
+```
+
+Exit code **0** means a structural match; **1** means differences; **2** means invalid input or a file error. Existing reports are refused. Duplicate object keys and non-finite numbers are rejected. Object-key order is ignored, array order matters, and types are strict (`1`, `1.0`, and `true` differ). No ignored fields, numeric tolerances, timestamp normalization, or binary-file comparison is implied.
+
+The report contains JSON Pointer paths and difference kinds, but no input values. The empty path means the document root; `~` and `/` in keys are escaped. Field names and counts can still reveal information, so reports remain private by default. A matching JSON result is evidence for that output only; it does not prove complete API or product compatibility.
+
 ## Private workspace
 
 ```bash

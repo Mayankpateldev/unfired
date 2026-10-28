@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "sku": "A",
+      "quantity": 2,
+      "unit_cents": 1250
+    },
+    {
+      "sku": "B",
+      "quantity": 1,
+      "unit_cents": 500
+    }
+  ],
+  "discount_bps": 1000,
+  "tax_bps": 500
+}

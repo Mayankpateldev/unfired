@@ -1,53 +1,62 @@
-# Launch kit: useful enough to share
+# Launch kit: the open rebuild movement
 
-The project URL is ready to share. These are drafts; no messages have been sent to external communities. Respect community self-promotion rules and disclose your involvement.
+Project URL: https://github.com/Mayankpateldev/unfired
+
+These are editable drafts. No messages have been sent to external communities. Follow community self-promotion rules and disclose your involvement. Describe the working release rather than promising an entire platform catalog.
 
 ## One-line pitch
 
-Unfired: they ended your role; you keep your skills. A free open-source kit to recover, learn, and build useful tools together.
+Unfired: understand how it works, build it open, make it accessible. A practical handbook and runnable labs for independently built open alternatives.
 
 ## Short post
 
-Layoffs take away a role. They don’t take away years of experience.
+Your experience can become something people own.
 
-We’re starting Unfired: an open-source comeback kit with a first-72-hours checklist, a practical learning roadmap, job-search templates, and local tools you can run without an account or API key.
+Unfired is an open-source movement for studying observable behavior and building original, accessible alternatives: APIs, file formats, workflows, apps, and more.
 
-The idea: turn skills into free tools people can own and use.
+The repo now includes a rebuild handbook, three runnable Python labs, a project-dossier generator, a JSON compatibility checker, and a 12-week learning route. No paid AI API is required. Worker recovery resources are included too.
 
-Start with one checklist, test the CSV cleaner, or improve one confusing instruction. Early project; feedback welcome.
+Start by running one lab or improving one confusing instruction.
 
 https://github.com/Mayankpateldev/unfired
 
-Optional tags: #OpenSource #CareerChange #Unfired
+Optional tags: #OpenSource #ReverseEngineering #Unfired
 
 ## Longer community introduction
 
-Title: **Unfired — an open-source comeback kit for people navigating layoffs**
+Title: **Unfired — learn how systems work, then build useful open alternatives**
 
-I’m building a free resource for workers dealing with layoffs and changing work. It combines practical recovery checklists, a flexible 90-day plan, learning paths with deliverables, and a small Python toolkit. No account or paid model is required for the included tools.
+We’re building Unfired around a practical sequence: observe, specify, rebuild, verify, and share. The aim is to turn hard-earned skills into tools users can run, inspect, modify, and leave with their data.
 
-We want to help people independently build useful alternatives to expensive workflows using public information and original code. The project has a provenance policy and excludes employer code, private designs, and customer data.
+Version 0.2 includes three original teaching labs: API behavior with two implementations and golden cases, CSV/JSON task-export migration, and deterministic support-ticket routing. It also includes a six-track handbook, a 12-week curriculum, project scaffolding, strict JSON comparison, contribution templates, and 24 catalog entries. Four entries have initial implementations; the other 20 are proposals.
 
-This is an early starter, not a placement service or a finished collection of software products. The most helpful feedback right now is: can you run the quickstart, and which step is confusing? Documentation, translations, testing, and design contributions are welcome.
+The labs are synthetic teaching systems, not commercial products we claim to have reverse-engineered. Real projects need public or authorized sources, original implementation, compatibility evidence, export, maintenance, and an honest statement of limits.
+
+People affected by layoffs are welcome, and employment status is not a requirement. The original recovery checklists and job-search materials remain available.
+
+The most useful feedback: can you run a lab, find a real edge case, or identify a small workflow worth rebuilding? Research, QA, design, writing, translation, and code all count.
 
 https://github.com/Mayankpateldev/unfired
 
-## 30-second demo script
+## 45-second demo
 
-1. Show the first-72-hours guide.
-2. Run `python3 tools/unfired.py init` in a fresh checkout.
-3. Clean `examples/messy-contacts.csv` into a new output path.
-4. Show the synthetic result and explain the privacy/format limits.
-5. Point to one starter issue and the MIT license.
+1. Show the build-first README and handbook index.
+2. Run `python3 -m labs.verify` and explain that the 20 checks cover specific synthetic cases.
+3. Convert the board CSV into a new local JSON file.
+4. Compare that output against the expected JSON with `tools/compare_json.py`.
+5. Show a draft project dossier and one starter issue.
+6. End with the MIT license and its explicit commercial-reuse tradeoff.
 
-## A responsible first week
+Use new output filenames on reruns. Demonstrate only synthetic data. A deliberate mismatch makes a stronger test demonstration than claiming universal compatibility.
 
-- Day 1: publish after local checks; verify Actions and the README.
-- Day 2: share an honest demo with your own network.
-- Day 3: ask a few willing testers where they got stuck.
-- Day 4: fix setup issues and credit contributors with permission.
-- Day 5: share in one relevant community if its rules allow it.
-- Day 6: help someone make their first contribution.
-- Day 7: report shipped changes and next needs; do not invent traction.
+## First week after release
 
-Make the share request specific: “Help one person run this” or “Improve one instruction.” No purchased stars, engagement pods, repeated cross-posting, harassment, or unverifiable promises. Virality is an outcome, not a feature we can guarantee.
+- Day 1: verify setup and the final Actions run.
+- Day 2: share a concise demo with your own network.
+- Day 3: invite a few willing testers to identify friction.
+- Day 4: fix the highest-impact problem and credit contributors with permission.
+- Day 5: share in one relevant community if its rules permit it.
+- Day 6: help someone write their first observation, fixture, or docs improvement.
+- Day 7: publish what shipped, what failed, and what help is needed.
+
+Ask for a specific contribution, such as “add a counterexample” or “help one person run this.” No purchased stars, artificial engagement, spam, fabricated adoption, or guaranteed virality.

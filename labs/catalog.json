@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "labs": [
+    {
+      "id": "quote-api",
+      "readme": "labs/quote_api/README.md",
+      "spec": "labs/quote_api/SPEC.md",
+      "fixtures": [
+        "labs/quote_api/fixtures.json"
+      ],
+      "kind": "synthetic-teaching-lab"
+    },
+    {
+      "id": "board-format",
+      "readme": "labs/board_format/README.md",
+      "spec": "labs/board_format/SPEC.md",
+      "fixtures": [
+        "labs/board_format/fixtures/cards.csv",
+        "labs/board_format/fixtures/expected.json"
+      ],
+      "kind": "synthetic-teaching-lab"
+    },
+    {
+      "id": "ticket-triage",
+      "readme": "labs/ticket_triage/README.md",
+      "spec": "labs/ticket_triage/SPEC.md",
+      "fixtures": [
+        "labs/ticket_triage/fixtures/input.json",
+        "labs/ticket_triage/fixtures/expected.json"
+      ],
+      "kind": "synthetic-teaching-lab"
+    }
+  ]
+}

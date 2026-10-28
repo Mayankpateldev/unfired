@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "projects": [
     {
       "id": "csv-cleaner",
@@ -16,7 +16,11 @@
         "Enrichment",
         "Cloud connectors",
         "Lossless numeric typing"
-      ]
+      ],
+      "category": "file-format",
+      "kind": "tool",
+      "effort": "small first slice",
+      "start_here": "tools/README.md"
     },
     {
       "id": "application-board",
@@ -32,7 +36,11 @@
       "excludes": [
         "Job scraping",
         "Auto-applying"
-      ]
+      ],
+      "category": "web",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "invoice-draft",
@@ -49,7 +57,11 @@
         "Tax advice",
         "Payment processing",
         "Compliance claims"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "scope-letter",
@@ -64,7 +76,11 @@
       "excludes": [
         "Legal contract advice",
         "Automatic signatures"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "handover-kit",
@@ -79,7 +95,11 @@
       "excludes": [
         "Secret storage",
         "Employee surveillance"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "meeting-decisions",
@@ -95,7 +115,11 @@
         "Recording",
         "Transcription",
         "Private chat ingestion"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "data-dictionary",
@@ -111,7 +135,11 @@
       "excludes": [
         "Sensitive-data detection guarantees",
         "External uploads"
-      ]
+      ],
+      "category": "file-format",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "checklist-pack",
@@ -126,7 +154,11 @@
       "excludes": [
         "Approval engines",
         "Hosted accounts"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "text-diff",
@@ -141,7 +173,11 @@
       "excludes": [
         "Proprietary document parsing",
         "AI rewrite claims"
-      ]
+      ],
+      "category": "desktop",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "accessibility-notes",
@@ -156,7 +192,11 @@
       "excludes": [
         "Compliance certification",
         "Automated audit guarantees"
-      ]
+      ],
+      "category": "web",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "time-box",
@@ -172,7 +212,11 @@
       "excludes": [
         "Employee scoring",
         "Screen capture"
-      ]
+      ],
+      "category": "desktop",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
     },
     {
       "id": "service-catalog",
@@ -188,7 +232,259 @@
         "Payments",
         "Lead scraping",
         "Revenue promises"
-      ]
+      ],
+      "category": "workflow",
+      "kind": "proposal",
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "quote-api-lab",
+      "name": "Quote API Compatibility",
+      "category": "api",
+      "kind": "teaching-lab",
+      "status": "initial-implementation",
+      "user": "Developer",
+      "task": "Reproduce a documented request/response contract",
+      "mvp": "Two arithmetic implementations and a loopback HTTP server",
+      "acceptance": [
+        "18 golden API cases match independently specified expectations",
+        "HTTP errors and response type are tested"
+      ],
+      "excludes": [
+        "Payment processing",
+        "Real tax rules",
+        "External vendor compatibility"
+      ],
+      "effort": "runnable teaching example",
+      "start_here": "labs/quote_api/README.md"
+    },
+    {
+      "id": "board-format-lab",
+      "name": "Board Export Bridge",
+      "category": "file-format",
+      "kind": "teaching-lab",
+      "status": "initial-implementation",
+      "user": "User migrating local task data",
+      "task": "Preserve IDs, text, states, and labels across formats",
+      "mvp": "Strict CSV and versioned JSON converter",
+      "acceptance": [
+        "Unicode and multiline fields survive a semantic round trip",
+        "Unknown fields and versions are rejected"
+      ],
+      "excludes": [
+        "Third-party vendor adapters",
+        "Attachments",
+        "Production migration guarantees"
+      ],
+      "effort": "runnable teaching example",
+      "start_here": "labs/board_format/README.md"
+    },
+    {
+      "id": "ticket-routing-lab",
+      "name": "Transparent Ticket Routing",
+      "category": "workflow",
+      "kind": "teaching-lab",
+      "status": "initial-implementation",
+      "user": "Support workflow designer",
+      "task": "Preview routing with explicit rule precedence",
+      "mvp": "Deterministic local JSON routing preview",
+      "acceptance": [
+        "Urgency precedes topic matching",
+        "Unknown topics reach the fallback"
+      ],
+      "excludes": [
+        "Actual dispatch",
+        "Emergency detection",
+        "AI classification"
+      ],
+      "effort": "runnable teaching example",
+      "start_here": "labs/ticket_triage/README.md"
+    },
+    {
+      "id": "portable-form",
+      "name": "Portable Form",
+      "category": "web",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Volunteer organizer",
+      "task": "Collect a small local form and export answers",
+      "mvp": "Accessible fields with local save and JSON export",
+      "acceptance": [
+        "Keyboard-only completion works",
+        "Export contains all entered fields"
+      ],
+      "excludes": [
+        "Public hosting",
+        "Sensitive-data collection",
+        "Payments"
+      ],
+      "effort": "small first slice",
+      "start_here": "projects/briefs/portable-form.md"
+    },
+    {
+      "id": "markdown-knowledge",
+      "name": "Markdown Knowledge Shelf",
+      "category": "desktop",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Independent researcher",
+      "task": "Find notes without a hosted knowledge platform",
+      "mvp": "Local Markdown index and plain-text search",
+      "acceptance": [
+        "Results link to original local files",
+        "Unicode fixtures remain readable"
+      ],
+      "excludes": [
+        "Cloud sync",
+        "Third-party private workspace scraping"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "event-log-reader",
+      "name": "Event Log Reader",
+      "category": "file-format",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Application operator",
+      "task": "Explain a documented synthetic event export",
+      "mvp": "JSONL validation and summary with row errors",
+      "acceptance": [
+        "Malformed lines have exact line numbers",
+        "Unknown event types remain visible"
+      ],
+      "excludes": [
+        "Remote log collection",
+        "Private production logs"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "public-api-adapter",
+      "name": "Public API Adapter",
+      "category": "api",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Developer maintaining an integration",
+      "task": "Use a documented API through a small stable interface",
+      "mvp": "Adapter against a local mock and public contract",
+      "acceptance": [
+        "Success and failure fixtures replay",
+        "Supported subset and rate assumptions are documented"
+      ],
+      "excludes": [
+        "Undocumented external access",
+        "Credential sharing",
+        "Broad compatibility claims"
+      ],
+      "effort": "small first slice",
+      "start_here": "projects/briefs/public-api-adapter.md"
+    },
+    {
+      "id": "booking-rules",
+      "name": "Availability Rules",
+      "category": "workflow",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Small workshop organizer",
+      "task": "Generate available times from supplied rules",
+      "mvp": "Offline slot generation from explicit timezone and busy intervals",
+      "acceptance": [
+        "Boundary overlaps are rejected",
+        "Timezone and daylight-saving examples have reviewed expectations"
+      ],
+      "excludes": [
+        "Calendar account access",
+        "Automatic bookings",
+        "Payments"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "design-token-bridge",
+      "name": "Design Token Bridge",
+      "category": "file-format",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Design-system contributor",
+      "task": "Move original design tokens between open representations",
+      "mvp": "Documented JSON tokens to CSS variables",
+      "acceptance": [
+        "Supported token values round trip through a manifest",
+        "Unsupported types fail explicitly"
+      ],
+      "excludes": [
+        "Copying proprietary assets",
+        "Named-platform parity"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "cli-behavior-lab",
+      "name": "CLI Behavior Notebook",
+      "category": "desktop",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Learner using an owned training program",
+      "task": "Record exit codes and output behavior",
+      "mvp": "Original tiny program plus input/output cases",
+      "acceptance": [
+        "Successful and invalid arguments have specified exits",
+        "Compiler/build version is recorded"
+      ],
+      "excludes": [
+        "License bypass",
+        "Commercial binary redistribution"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "sensor-interface-notes",
+      "name": "Sensor Interface Notes",
+      "category": "hardware",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "Learner with a low-voltage educational sensor",
+      "task": "Explain a public datasheet interface",
+      "mvp": "Datasheet-based simulator and measurement notebook",
+      "acceptance": [
+        "Units and signal assumptions are explicit",
+        "Simulated cases are reproducible without hardware"
+      ],
+      "excludes": [
+        "Firmware extraction",
+        "Mains systems",
+        "Safety certification"
+      ],
+      "effort": "small first slice",
+      "start_here": "templates/project-proposal.md"
+    },
+    {
+      "id": "export-audit",
+      "name": "Export Completeness Audit",
+      "category": "file-format",
+      "kind": "proposal",
+      "status": "proposal",
+      "user": "User moving their own data",
+      "task": "Detect missing records and fields in a migration",
+      "mvp": "Compare two supplied synthetic export manifests",
+      "acceptance": [
+        "Count differences and missing IDs are reported",
+        "Original exports are never changed"
+      ],
+      "excludes": [
+        "Private account connections",
+        "Automatic deletion",
+        "Guaranteed vendor coverage"
+      ],
+      "effort": "small first slice",
+      "start_here": "projects/briefs/export-audit.md"
     }
   ]
 }

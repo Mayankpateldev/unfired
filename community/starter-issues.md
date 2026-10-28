@@ -1,9 +1,12 @@
-# Starter issues to create after publication
+# Starter issues and contribution paths
 
-The first three issues are published below. The remaining rows are drafts to create only when a maintainer can review them.
+Six issues are published below. The remaining rows are drafts to create only when a maintainer can review them.
 
 | Title | Suggested labels | Acceptance criteria |
 | --- | --- | --- |
+| [Implement the Quote API contract in another language](https://github.com/Mayankpateldev/unfired/issues/4) | help wanted | Reproduce the 18 fixtures, record sources, and document setup/limits |
+| [Add a meaningful portability fixture](https://github.com/Mayankpateldev/unfired/issues/5) | good first issue, help wanted | Independently specify a result that catches a plausible lossy converter |
+| [Review a scoped open rebuild proposal](https://github.com/Mayankpateldev/unfired/issues/6) | good first issue, documentation | Improve one specific contract or acceptance gap and consider existing alternatives |
 | [Follow the quickstart on Windows](https://github.com/Mayankpateldev/unfired/issues/1) | good first issue, help wanted | Record Python version, command differences, and synthetic results; fix confirmed documentation friction |
 | [Make the first-72-hours guide clearer](https://github.com/Mayankpateldev/unfired/issues/2) | good first issue, documentation | Propose concrete wording improvements without individualized legal advice |
 | [Add one sourced regional resource guide](https://github.com/Mayankpateldev/unfired/issues/3) | documentation, help wanted | Use the regional template, official links, review date, and a local reviewer |
