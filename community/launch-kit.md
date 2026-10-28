@@ -1,6 +1,6 @@
 # Launch kit: useful enough to share
 
-Replace `REPO_URL` with the real published URL before posting. These are drafts; no messages have been sent. Respect community self-promotion rules and disclose your involvement.
+The project URL is ready to share. These are drafts; no messages have been sent to external communities. Respect community self-promotion rules and disclose your involvement.
 
 ## One-line pitch
 
@@ -16,7 +16,7 @@ The idea: turn skills into free tools people can own and use.
 
 Start with one checklist, test the CSV cleaner, or improve one confusing instruction. Early project; feedback welcome.
 
-REPO_URL
+https://github.com/Mayankpateldev/unfired
 
 Optional tags: #OpenSource #CareerChange #Unfired
 
@@ -30,7 +30,7 @@ We want to help people independently build useful alternatives to expensive work
 
 This is an early starter, not a placement service or a finished collection of software products. The most helpful feedback right now is: can you run the quickstart, and which step is confusing? Documentation, translations, testing, and design contributions are welcome.
 
-REPO_URL
+https://github.com/Mayankpateldev/unfired
 
 ## 30-second demo script
 

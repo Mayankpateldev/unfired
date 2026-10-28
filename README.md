@@ -13,6 +13,7 @@ A free, open-source survival kit for layoffs — and a movement to turn hard-ear
 ![License: MIT](https://img.shields.io/badge/license-MIT-96f56a)
 ![Dependencies: zero](https://img.shields.io/badge/Python_dependencies-zero-96f56a)
 ![Status: early project](https://img.shields.io/badge/status-early_project-ffba69)
+[![Repository checks](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml/badge.svg)](https://github.com/Mayankpateldev/unfired/actions/workflows/checks.yml)
 
 </div>
 
@@ -85,12 +86,12 @@ Use public documentation, public standards, properly licensed dependencies, and 
 - Translate the first-72-hours guide and have a second speaker review it.
 - Share the repo with one person who would find it useful.
 
-Use the [issue templates](.github/ISSUE_TEMPLATE), [contribution guide](CONTRIBUTING.md), and [launch kit](community/launch-kit.md). This is an early project with [a public roadmap](ROADMAP.md), not an established support organization. We cannot promise response times.
+Use the [issue templates](.github/ISSUE_TEMPLATE), [contribution guide](CONTRIBUTING.md), [Discussions](https://github.com/Mayankpateldev/unfired/discussions), and [launch kit](community/launch-kit.md). This is an early project with [a public roadmap](ROADMAP.md), not an established support organization. We cannot promise response times.
 
 ## License and publication
 
 [MIT](LICENSE) covers original code, documentation, templates, and artwork in this repository. Anyone, including companies, may use and modify them commercially while preserving the required notice. MIT does **not** require downstream modifications to stay open. Linked third-party materials keep their own licenses.
 
-The name is a working project name; availability and trademark clearance have not been established. [Publish to GitHub](docs/08-publish-and-launch.md) after reviewing the contents. Publication and viral reach are not guaranteed.
+The repository is public at [Mayankpateldev/unfired](https://github.com/Mayankpateldev/unfired). Trademark clearance for the working name has not been established. See [publication instructions](docs/08-publish-and-launch.md) for forks and launch setup. Viral reach is not guaranteed.
 
 Employment, benefits, immigration, tax, and IP rules depend on location and circumstances. Guides point to official sources; they are general information, not individualized professional advice. Source review date: **2026-10-27**.

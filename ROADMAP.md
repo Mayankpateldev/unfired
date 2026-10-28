@@ -7,7 +7,7 @@
 - [x] Local CLI with private workspace, cash scenario, CSV cleaner, and tracker summary.
 - [x] Synthetic examples, tests, MIT license, templates, CI, and launch materials.
 - [x] A project catalog with proposal status made explicit.
-- [ ] Publish to GitHub and verify remote CI. This is a publication task, not a completed claim.
+- [x] Publish to GitHub and verify remote CI on Python 3.10 and 3.14.
 
 ## v0.2: validate with people
 
